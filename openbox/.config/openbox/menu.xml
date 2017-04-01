@@ -97,6 +97,9 @@
                         <execute>nm-connection-editor</execute>
                     </action> </item>
                 </menu>
+                <item label="ARandR"> <action name="Execute">
+                    <execute>arandr</execute>
+                </action> </item>
                 <item label="Openbox Configuration Manager"> <action name="Execute">
                     <execute>obconf</execute>
                 </action> </item>
@@ -109,11 +112,17 @@
             </action> </item>
         </menu>
         <menu id="38" label="Utilities">
+            <item label="About Xfce"> <action name="Execute">
+                <execute>xfce4-about</execute>
+            </action> </item>
+            <item label="Application Finder"> <action name="Execute">
+                <execute>xfce4-appfinder</execute>
+            </action> </item>
             <item label="KeePassX 2"> <action name="Execute">
                 <execute>keepassx2</execute>
             </action> </item>
-            <item label="Ulauncher"> <action name="Execute">
-                <execute>ulauncher</execute>
+            <item label="Run Program..."> <action name="Execute">
+                <execute>xfce4-appfinder --collapsed</execute>
             </action> </item>
         </menu>
         <separator/>
