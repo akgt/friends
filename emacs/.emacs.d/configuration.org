@@ -648,7 +648,7 @@ https://www.emacswiki.org/emacs/CompanyMode#toc8
    #+END_SRC
 
 ** smartparens
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC noemacs-lisp
      (use-package smartparens
        :ensure t
        :demand t
@@ -748,6 +748,7 @@ https://www.emacswiki.org/emacs/CompanyMode#toc8
    Expand region increases the selected region by semantic units. Just keep
    pressing the key until it selects what you want.
    #+BEGIN_SRC emacs-lisp
+     (use-package expand-region :ensure t)
      (require 'expand-region)
      (global-set-key (kbd "M-é") 'er/expand-region)
      (global-set-key (kbd "C-M-é") 'er/contract-region)
@@ -1205,14 +1206,15 @@ While we're here, let's also increase recentf's items
    #+END_SRC
 ** Terminal
    #+BEGIN_SRC emacs-lisp
-        (require 'multi-term)
-        (setq multi-term-program "/bin/bash")
-
+     (use-package multi-term :ensure t
+       :init
+       (setq multi-term-program "/bin/bash")
+       )
      (add-hook 'term-mode-hook
                (lambda ()
                  (goto-address-mode)
                  (define-key term-raw-map (kbd "M-o") 'other-window)
-               ))
+                 ))
    #+END_SRC
 ** Session
    Saving Emacs Sessions
@@ -1252,8 +1254,8 @@ While we're here, let's also increase recentf's items
 
 ** Custom solarized-dark theme
 
-
    #+BEGIN_SRC emacs-lisp
+     (use-package solarized-theme :ensure t)
      (when window-system
        (setq solarized-use-variable-pitch nil)
        (setq solarized-height-plus-1 1.0)
