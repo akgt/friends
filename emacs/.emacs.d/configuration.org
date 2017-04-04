@@ -1183,7 +1183,7 @@ While we're here, let's also increase recentf's items
              `((avy-goto-char-timer . (?j ?k ?l ?f ?s ?d ?e ?r ?u ?i))
                (avy-goto-line . (?j ?k ?l ?f ?s ?d ?e ?r ?u ?i))))
        (setq avy-style 'pre)
-       :bind* (("M-z" . avy-goto-char-timer)
+       :bind* (("M-z" . ace-jump-mode)
                ("M-m z" . avy-goto-line)))
    #+END_SRC
 ** smex
